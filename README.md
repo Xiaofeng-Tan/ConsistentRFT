@@ -40,6 +40,7 @@
 <p><b>TL;DR:</b> This work provides a preliminary analysis of this issue from two perspectives—<span style="color: #84193E;"><b>limited exploration</b></span> and <span style="color: #84193E;"><b>trajectory imitation</b></span>—and proposes addressing them using <span style="color: #004D99;"><b>Dynamic Granularity Rollout</b></span> and <span style="color: #004D99;"><b>Consistent Policy Gradient Optimization</b></span>.</p>
 </blockquote>
 
+## 📢 NEWS
 News: 🚀 The code will be partially released before **February 15th, 2026**, with the full release scheduled before **April 2026**.
 
 
