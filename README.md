@@ -21,7 +21,7 @@
 </p>
 
 <p align="center">
-  <a href="">
+  <a href="https://arxiv.org/abs/2602.03425">
     <img src="https://img.shields.io/badge/Paper-PDF-yellow?style=flat&logo=arXiv&logoColor=yellow" alt="Paper PDF on arXiv">
   </a>
   <a href="https://xiaofeng-tan.github.io/projects/ConsistentRFT/">
