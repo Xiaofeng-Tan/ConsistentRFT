@@ -61,26 +61,15 @@
 ## 📆 Plan
 
 - [x] Release paper
-- [x] Release checkpoints
 - [x] Release evaluation code:
-  - [ ] In-domain / out-of-domain evaluation
+  - [x] In-domain / out-of-domain evaluation
   - [x] High-level visual hallucination evaluation (v1 & v2)
   - [x] Low-level visual hallucination evaluation
-- [ ] Release training code:
-  - [ ] Dynamic Granularity Rollout (DGR)
+- [x] Release training code:
+  - [x] Dynamic Granularity Rollout (DGR)
   - [x] Consistent Policy Gradient Optimization (CPGO)
-  - [x] ConsistentRFT for DPO, GRPO, and DDPO
+  - [x] ConsistentRFT for DPO, GRPO.
 - [x] Release inference code
-
----
-
-## 🧬 Model Zoo
-
-| Variant | Description | Hugging Face |
-|---------|-------------|--------------|
-| DanceGRPO-based | Flux models fine-tuned via DanceGRPO with ConsistentRFT | [checkpoint](https://huggingface.co/models?search=ConsistentRFT+DanceGRPO) |
-| DPO-based | Flux models first distilled via DPO, then enhanced with ConsistentRFT | [checkpoint](https://huggingface.co/models?search=ConsistentRFT+DPO) |
-| More incoming | GRPO, DDPO, and additional variants will be published soon | Stay tuned |
 
 ---
 

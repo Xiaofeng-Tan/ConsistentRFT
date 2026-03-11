@@ -1,0 +1,840 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>README.md</title>
+    <meta http-equiv="Content-type" content="text/html;charset=UTF-8">
+    
+<style>
+/* https://github.com/microsoft/vscode/blob/master/extensions/markdown-language-features/media/markdown.css */
+/*---------------------------------------------------------------------------------------------
+ *  Copyright (c) Microsoft Corporation. All rights reserved.
+ *  Licensed under the MIT License. See License.txt in the project root for license information.
+ *--------------------------------------------------------------------------------------------*/
+
+body {
+	font-family: var(--vscode-markdown-font-family, -apple-system, BlinkMacSystemFont, "Segoe WPC", "Segoe UI", "Ubuntu", "Droid Sans", sans-serif);
+	font-size: var(--vscode-markdown-font-size, 14px);
+	padding: 0 26px;
+	line-height: var(--vscode-markdown-line-height, 22px);
+	word-wrap: break-word;
+}
+
+html,footer,header{
+	font-family: var(--vscode-markdown-font-family, -apple-system, BlinkMacSystemFont, "Segoe WPC", "Segoe UI", "Ubuntu", "Droid Sans", sans-serif);
+	font-size: var(--vscode-markdown-font-size, 14px);
+}
+
+#code-csp-warning {
+	position: fixed;
+	top: 0;
+	right: 0;
+	color: white;
+	margin: 16px;
+	text-align: center;
+	font-size: 12px;
+	font-family: sans-serif;
+	background-color:#444444;
+	cursor: pointer;
+	padding: 6px;
+	box-shadow: 1px 1px 1px rgba(0,0,0,.25);
+}
+
+#code-csp-warning:hover {
+	text-decoration: none;
+	background-color:#007acc;
+	box-shadow: 2px 2px 2px rgba(0,0,0,.25);
+}
+
+body.scrollBeyondLastLine {
+	margin-bottom: calc(100vh - 22px);
+}
+
+body.showEditorSelection .code-line {
+	position: relative;
+}
+
+body.showEditorSelection .code-active-line:before,
+body.showEditorSelection .code-line:hover:before {
+	content: "";
+	display: block;
+	position: absolute;
+	top: 0;
+	left: -12px;
+	height: 100%;
+}
+
+body.showEditorSelection li.code-active-line:before,
+body.showEditorSelection li.code-line:hover:before {
+	left: -30px;
+}
+
+.vscode-light.showEditorSelection .code-active-line:before {
+	border-left: 3px solid rgba(0, 0, 0, 0.15);
+}
+
+.vscode-light.showEditorSelection .code-line:hover:before {
+	border-left: 3px solid rgba(0, 0, 0, 0.40);
+}
+
+.vscode-light.showEditorSelection .code-line .code-line:hover:before {
+	border-left: none;
+}
+
+.vscode-dark.showEditorSelection .code-active-line:before {
+	border-left: 3px solid rgba(255, 255, 255, 0.4);
+}
+
+.vscode-dark.showEditorSelection .code-line:hover:before {
+	border-left: 3px solid rgba(255, 255, 255, 0.60);
+}
+
+.vscode-dark.showEditorSelection .code-line .code-line:hover:before {
+	border-left: none;
+}
+
+.vscode-high-contrast.showEditorSelection .code-active-line:before {
+	border-left: 3px solid rgba(255, 160, 0, 0.7);
+}
+
+.vscode-high-contrast.showEditorSelection .code-line:hover:before {
+	border-left: 3px solid rgba(255, 160, 0, 1);
+}
+
+.vscode-high-contrast.showEditorSelection .code-line .code-line:hover:before {
+	border-left: none;
+}
+
+img {
+	max-width: 100%;
+	max-height: 100%;
+}
+
+a {
+	text-decoration: none;
+}
+
+a:hover {
+	text-decoration: underline;
+}
+
+a:focus,
+input:focus,
+select:focus,
+textarea:focus {
+	outline: 1px solid -webkit-focus-ring-color;
+	outline-offset: -1px;
+}
+
+hr {
+	border: 0;
+	height: 2px;
+	border-bottom: 2px solid;
+}
+
+h1 {
+	padding-bottom: 0.3em;
+	line-height: 1.2;
+	border-bottom-width: 1px;
+	border-bottom-style: solid;
+}
+
+h1, h2, h3 {
+	font-weight: normal;
+}
+
+table {
+	border-collapse: collapse;
+}
+
+table > thead > tr > th {
+	text-align: left;
+	border-bottom: 1px solid;
+}
+
+table > thead > tr > th,
+table > thead > tr > td,
+table > tbody > tr > th,
+table > tbody > tr > td {
+	padding: 5px 10px;
+}
+
+table > tbody > tr + tr > td {
+	border-top: 1px solid;
+}
+
+blockquote {
+	margin: 0 7px 0 5px;
+	padding: 0 16px 0 10px;
+	border-left-width: 5px;
+	border-left-style: solid;
+}
+
+code {
+	font-family: Menlo, Monaco, Consolas, "Droid Sans Mono", "Courier New", monospace, "Droid Sans Fallback";
+	font-size: 1em;
+	line-height: 1.357em;
+}
+
+body.wordWrap pre {
+	white-space: pre-wrap;
+}
+
+pre:not(.hljs),
+pre.hljs code > div {
+	padding: 16px;
+	border-radius: 3px;
+	overflow: auto;
+}
+
+pre code {
+	color: var(--vscode-editor-foreground);
+	tab-size: 4;
+}
+
+/** Theming */
+
+.vscode-light pre {
+	background-color: rgba(220, 220, 220, 0.4);
+}
+
+.vscode-dark pre {
+	background-color: rgba(10, 10, 10, 0.4);
+}
+
+.vscode-high-contrast pre {
+	background-color: rgb(0, 0, 0);
+}
+
+.vscode-high-contrast h1 {
+	border-color: rgb(0, 0, 0);
+}
+
+.vscode-light table > thead > tr > th {
+	border-color: rgba(0, 0, 0, 0.69);
+}
+
+.vscode-dark table > thead > tr > th {
+	border-color: rgba(255, 255, 255, 0.69);
+}
+
+.vscode-light h1,
+.vscode-light hr,
+.vscode-light table > tbody > tr + tr > td {
+	border-color: rgba(0, 0, 0, 0.18);
+}
+
+.vscode-dark h1,
+.vscode-dark hr,
+.vscode-dark table > tbody > tr + tr > td {
+	border-color: rgba(255, 255, 255, 0.18);
+}
+
+</style>
+
+<style>
+/* Tomorrow Theme */
+/* http://jmblog.github.com/color-themes-for-google-code-highlightjs */
+/* Original theme - https://github.com/chriskempson/tomorrow-theme */
+
+/* Tomorrow Comment */
+.hljs-comment,
+.hljs-quote {
+	color: #8e908c;
+}
+
+/* Tomorrow Red */
+.hljs-variable,
+.hljs-template-variable,
+.hljs-tag,
+.hljs-name,
+.hljs-selector-id,
+.hljs-selector-class,
+.hljs-regexp,
+.hljs-deletion {
+	color: #c82829;
+}
+
+/* Tomorrow Orange */
+.hljs-number,
+.hljs-built_in,
+.hljs-builtin-name,
+.hljs-literal,
+.hljs-type,
+.hljs-params,
+.hljs-meta,
+.hljs-link {
+	color: #f5871f;
+}
+
+/* Tomorrow Yellow */
+.hljs-attribute {
+	color: #eab700;
+}
+
+/* Tomorrow Green */
+.hljs-string,
+.hljs-symbol,
+.hljs-bullet,
+.hljs-addition {
+	color: #718c00;
+}
+
+/* Tomorrow Blue */
+.hljs-title,
+.hljs-section {
+	color: #4271ae;
+}
+
+/* Tomorrow Purple */
+.hljs-keyword,
+.hljs-selector-tag {
+	color: #8959a8;
+}
+
+.hljs {
+	display: block;
+	overflow-x: auto;
+	color: #4d4d4c;
+	padding: 0.5em;
+}
+
+.hljs-emphasis {
+	font-style: italic;
+}
+
+.hljs-strong {
+	font-weight: bold;
+}
+</style>
+
+<style>
+/*
+ * Custom MD PDF CSS
+ */
+html,footer,header{
+	font-family: -apple-system, BlinkMacSystemFont, "Segoe WPC", "Segoe UI", "Ubuntu", "Droid Sans", sans-serif, "Meiryo";
+
+ }
+body {
+	font-family: -apple-system, BlinkMacSystemFont, "Segoe WPC", "Segoe UI", "Ubuntu", "Droid Sans", sans-serif, "Meiryo";
+	padding: 0 12px;
+}
+
+pre {
+	background-color: #f8f8f8;
+	border: 1px solid #cccccc;
+	border-radius: 3px;
+	overflow-x: auto;
+	white-space: pre-wrap;
+	overflow-wrap: break-word;
+}
+
+pre:not(.hljs) {
+	padding: 23px;
+	line-height: 19px;
+}
+
+blockquote {
+	background: rgba(127, 127, 127, 0.1);
+	border-color: rgba(0, 122, 204, 0.5);
+}
+
+.emoji {
+	height: 1.4em;
+}
+
+code {
+	font-size: 14px;
+	line-height: 19px;
+}
+
+/* for inline code */
+:not(pre):not(.hljs) > code {
+	color: #C9AE75; /* Change the old color so it seems less like an error */
+	font-size: inherit;
+}
+
+/* Page Break : use <div class="page"/> to insert page break
+-------------------------------------------------------- */
+.page {
+	page-break-after: always;
+}
+
+</style>
+<link rel="stylesheet" href="file:///Users/tanxiaofeng/Documents/GitHub/ConsistentRFT/R%3A%5C2.Travail%5C1.Enseignement%5CCours%5C_1.Outils%5C2.Developpement%5C1.SCSS%5Cmain.css" type="text/css"><link rel="stylesheet" href="file:///Users/tanxiaofeng/Documents/GitHub/ConsistentRFT/D%3A%5Crdaros%5CCours%5C_1.Outils%5C2.Developpement%5C1.SCSS%5Cmain.css" type="text/css">
+</head>
+
+<body>
+    <h1 align="center">ConsistentRFT: Reducing Visual Hallucinations in<br>Flow-based Reinforcement Fine-Tuning</h1>
+<p align="center">
+  <strong>Under Review</strong>
+</p>
+<p align="center">
+  <a href="https://xiaofeng-tan.github.io/" target="_blank">Xiaofeng&#xA0;Tan</a>&#x2003;
+  Jun&#xA0;Liu&#x2003;
+  Yuanting&#xA0;Fan&#x2003;
+  Bin-Bin&#xA0;Gao&#x2003;
+  Xi&#xA0;Jiang&#x2003;
+  Xiaochen&#xA0;Chen&#x2003;
+  Jinlong&#xA0;Peng&#x2003;
+  Chengjie&#xA0;Wang&#x2003;
+  Hongsong&#xA0;Wang&#x2003;
+  Feng&#xA0;Zheng
+</p>
+<p align="center">
+  Southeast University&#x2003;&#xB7;&#x2003;Southern University of Science and Technology&#x2003;&#xB7;&#x2003;Tencent Youtu Lab
+</p>
+<p align="center">
+  <a href="#">
+    <img src="https://img.shields.io/badge/Paper-PDF-yellow?style=flat&amp;logo=arXiv&amp;logoColor=yellow" alt="Paper">
+  </a>
+  <a href="https://xiaofeng-tan.github.io/projects/ConsistentRFT/">
+    <img src="https://img.shields.io/badge/Project-Page-green?style=flat&amp;logo=Google%20chrome&amp;logoColor=green" alt="Project Page">
+  </a>
+  <a href="#">
+    <img src="https://img.shields.io/badge/Model-HuggingFace-FFD21E?style=flat&amp;logo=huggingface&amp;logoColor=black" alt="HuggingFace Models">
+  </a>
+</p>
+<p><strong>TL;DR:</strong> We analyze why visual hallucinations arise in reinforcement fine-tuning from two perspectives — <strong>limited exploration</strong> and <strong>trajectory imitation</strong> — and propose <strong>Dynamic Granularity Rollout (DGR)</strong> and <strong>Consistent Policy Gradient Optimization (CPGO)</strong> to address them.</p>
+<hr>
+<h2 id="%F0%9F%93%91-table-of-contents">📑 Table of Contents</h2>
+<ul>
+<li><a href="#-news">📣 News</a></li>
+<li><a href="#-plan">📆 Plan</a></li>
+<li><a href="#-model-zoo">🧬 Model Zoo</a></li>
+<li><a href="#-preprocess-data">📦 Preprocess Data</a></li>
+<li><a href="#%EF%B8%8F-setup">⚙️ Setup</a></li>
+<li><a href="#-training">🚀 Training</a></li>
+<li><a href="#-inference">🎨 Inference</a></li>
+<li><a href="#-evaluation">📊 Evaluation</a></li>
+<li><a href="#-acknowledgement">🙏 Acknowledgement</a></li>
+<li><a href="#-citation">📝 Citation</a></li>
+</ul>
+<hr>
+<h2 id="%F0%9F%93%A3-news">📣 News</h2>
+<ul>
+<li><strong>[2024/12]</strong> The paper has been publicly released.</li>
+</ul>
+<hr>
+<h2 id="%F0%9F%93%86-plan">📆 Plan</h2>
+<ul>
+<li><input type="checkbox" id="checkbox0" checked="true"><label for="checkbox0">Release paper</label></li>
+<li><input type="checkbox" id="checkbox1" checked="true"><label for="checkbox1">Release evaluation code:</label>
+<ul>
+<li><input type="checkbox" id="checkbox2" checked="true"><label for="checkbox2">In-domain / out-of-domain evaluation</label></li>
+<li><input type="checkbox" id="checkbox3" checked="true"><label for="checkbox3">High-level visual hallucination evaluation (v1 &amp; v2)</label></li>
+<li><input type="checkbox" id="checkbox4" checked="true"><label for="checkbox4">Low-level visual hallucination evaluation</label></li>
+</ul>
+</li>
+<li><input type="checkbox" id="checkbox5" checked="true"><label for="checkbox5">Release training code:</label>
+<ul>
+<li><input type="checkbox" id="checkbox6" checked="true"><label for="checkbox6">Dynamic Granularity Rollout (DGR)</label></li>
+<li><input type="checkbox" id="checkbox7" checked="true"><label for="checkbox7">Consistent Policy Gradient Optimization (CPGO)</label></li>
+<li><input type="checkbox" id="checkbox8" checked="true"><label for="checkbox8">ConsistentRFT for DPO, GRPO.</label></li>
+</ul>
+</li>
+<li><input type="checkbox" id="checkbox9" checked="true"><label for="checkbox9">Release inference code</label></li>
+</ul>
+<hr>
+<h2 id="%F0%9F%93%A6-preprocess-data">📦 Preprocess Data</h2>
+<p>Adjust the <code>prompt_path</code> parameter in <code>./scripts/preprocess/preprocess_flux_rl_embeddings.sh</code> to obtain the embeddings of the prompt dataset:</p>
+<pre class="hljs"><code><div>bash scripts/preprocess/preprocess_flux_rl_embeddings.sh
+</div></code></pre>
+<hr>
+<h2 id="%E2%9A%99%EF%B8%8F-setup">⚙️ Setup</h2>
+<blockquote>
+<p><strong>⚠️ Important:</strong> The training and evaluation environments have <strong>different dependency versions</strong> (e.g., PyTorch, vLLM, flash-attn). You <strong>must</strong> use separate conda environments to avoid conflicts.</p>
+</blockquote>
+<h3 id="1-training-environment-consistentrft">1. Training Environment (<code>ConsistentRFT</code>)</h3>
+<pre class="hljs"><code><div><span class="hljs-built_in">cd</span> ConsistentRFT
+conda create -n ConsistentRFT python=3.12
+conda activate ConsistentRFT
+
+<span class="hljs-comment"># Default: PyTorch with CUDA 12.8. For CUDA 12.4, set TORCH_CUDA=cu124</span>
+bash env_setup.sh
+<span class="hljs-comment"># or: TORCH_CUDA=cu124 bash env_setup.sh</span>
+</div></code></pre>
+<blockquote>
+<p><strong>Note:</strong> <code>env_setup.sh</code> will automatically install PyTorch, Flash Attention 2 (pre-built wheel from <a href="https://github.com/Dao-AILab/flash-attention/releases">GitHub Releases</a>), HPSv2, open_clip, and all training dependencies. The script auto-detects your torch version, Python version, and CXX11 ABI to download the correct flash-attn wheel. CUDA 12.x is required for Hopper GPUs (H20/H100/H200).</p>
+</blockquote>
+<h3 id="2-reward-evaluation-environment-consistentrfteval">2. Reward Evaluation Environment (<code>ConsistentRFT_Eval</code>)</h3>
+<p>The reward evaluation (HPS-v2.1, PickScore, ImageReward, CLIP Score, Aesthetic Predictor, UnifiedReward) uses a <strong>separate</strong> conda environment to avoid dependency conflicts with training.</p>
+<pre class="hljs"><code><div>conda create -n ConsistentRFT_Eval python=3.12
+conda activate ConsistentRFT_Eval
+bash env_eval_setup.sh
+</div></code></pre>
+<blockquote>
+<p><strong>Note:</strong> <code>env_eval_setup.sh</code> will install PyTorch, vLLM, flash-attn, and all reward model dependencies (image-reward, clip, aesthetic-predictor-v2-5, open_clip, HPSv2, etc.).</p>
+</blockquote>
+<h4 id="21-hps-v21">2.1 HPS-v2.1</h4>
+<p>Clone the <a href="https://github.com/tgxs002/HPSv2">HPSv2</a> repository:</p>
+<pre class="hljs"><code><div>git <span class="hljs-built_in">clone</span> https://github.com/tgxs002/HPSv2.git
+</div></code></pre>
+<p>Download the model weights to <code>./pretrained_ckpt</code>:</p>
+<pre class="hljs"><code><div>huggingface-cli login
+huggingface-cli download --resume-download xswu/HPSv2 HPS_v2.1_compressed.pt --<span class="hljs-built_in">local</span>-dir ./pretrained_ckpt/
+huggingface-cli download --resume-download laion/CLIP-ViT-H-14-laion2B-s32B-b79K open_clip_pytorch_model.bin --<span class="hljs-built_in">local</span>-dir ./pretrained_ckpt/
+</div></code></pre>
+<h4 id="22-pickscore">2.2 PickScore</h4>
+<p>Refer to <a href="https://github.com/yuvalkirstain/PickScore">PickScore</a> for more details.</p>
+<p>Download the required models:</p>
+<pre class="hljs"><code><div>huggingface-cli download --resume-download yuvalkirstain/PickScore_v1
+huggingface-cli download --resume-download laion/CLIP-ViT-H-14-laion2B-s32B-b79K
+</div></code></pre>
+<h4 id="23-imagereward">2.3 ImageReward</h4>
+<p>Refer to <a href="https://github.com/THUDM/ImageReward">ImageReward</a> for more details.</p>
+<p>Download the model weights to <code>./pretrained_ckpt/imagerward</code>:</p>
+<pre class="hljs"><code><div>mkdir -p pretrained_ckpt/imagerward
+huggingface-cli login
+huggingface-cli download --resume-download THUDM/ImageReward med_config.json --<span class="hljs-built_in">local</span>-dir ./pretrained_ckpt/imagerward/
+huggingface-cli download --resume-download THUDM/ImageReward ImageReward.pt --<span class="hljs-built_in">local</span>-dir ./pretrained_ckpt/imagerward/
+</div></code></pre>
+<h4 id="24-clip-score">2.4 CLIP Score</h4>
+<p>Refer to <a href="https://github.com/openai/CLIP">CLIP</a> for more details.</p>
+<p>Download the required model:</p>
+<pre class="hljs"><code><div>huggingface-cli download --resume-download apple/DFN5B-CLIP-ViT-H-14-384
+</div></code></pre>
+<h4 id="25-aesthetic-predictor-v25">2.5 Aesthetic Predictor V2.5</h4>
+<p>Refer to <a href="https://github.com/christophschuhmann/improved-aesthetic-predictor">improved-aesthetic-predictor</a> for more details.</p>
+<pre class="hljs"><code><div>conda activate ConsistentRFT_Eval
+pip install aesthetic-predictor-v2-5
+</div></code></pre>
+<h4 id="26-unifiedreward">2.6 UnifiedReward</h4>
+<p>Refer to <a href="https://github.com/CodeGoat24/UnifiedReward">UnifiedReward</a> for more details.</p>
+<p>UnifiedReward is a VLM-based reward model that requires deploying a vLLM server. It supports two evaluation modes: <strong>semantic</strong> (Alignment/Coherence/Style scores) and <strong>score</strong> (Final Score 1-5).</p>
+<p><strong>Serve the model</strong> (using the <code>ConsistentRFT_Eval</code> environment):</p>
+<p>For the 7B model (1 GPU):</p>
+<pre class="hljs"><code><div>conda activate ConsistentRFT_Eval
+CUDA_VISIBLE_DEVICES=0 vllm serve ./pretrained_ckpt/unified_reward \
+    --served-model-name UnifiedReward \
+    --trust-remote-code \
+    --gpu-memory-utilization 0.9 \
+    --tensor-parallel-size 1 \
+    --<span class="hljs-built_in">limit</span>-mm-per-prompt <span class="hljs-string">'{"image": 2}'</span> \
+    --port 8080
+</div></code></pre>
+<p>For the 72B model (4 GPUs):</p>
+<pre class="hljs"><code><div>conda activate ConsistentRFT_Eval
+CUDA_VISIBLE_DEVICES=0,1,2,3 vllm serve CodeGoat24/UnifiedReward-2.0-qwen-72b \
+    --served-model-name UnifiedReward \
+    --trust-remote-code \
+    --tensor-parallel-size 4 \
+    --<span class="hljs-built_in">limit</span>-mm-per-prompt <span class="hljs-string">'{"image": 16}'</span> \
+    --port 8080
+</div></code></pre>
+<p>Available model variants:</p>
+<table>
+<thead>
+<tr>
+<th>Model</th>
+<th>HuggingFace ID</th>
+<th>Size</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>UnifiedReward 2.0 Qwen 3B</td>
+<td><code>CodeGoat24/UnifiedReward-2.0-qwen-3b</code></td>
+<td>3B</td>
+</tr>
+<tr>
+<td>UnifiedReward 2.0 Qwen 7B</td>
+<td><code>CodeGoat24/UnifiedReward-2.0-qwen-7b</code></td>
+<td>7B</td>
+</tr>
+<tr>
+<td>UnifiedReward 2.0 Qwen 32B</td>
+<td><code>CodeGoat24/UnifiedReward-2.0-qwen-32b</code></td>
+<td>32B</td>
+</tr>
+<tr>
+<td>UnifiedReward 2.0 Qwen 72B</td>
+<td><code>CodeGoat24/UnifiedReward-2.0-qwen-72b</code></td>
+<td>72B</td>
+</tr>
+</tbody>
+</table>
+<blockquote>
+<p><strong>Note:</strong> The server must be running at <code>http://127.0.0.1:8080</code> (default in <code>eval_reward.sh</code>) before running evaluation with <code>unified_reward</code> or <code>all</code> reward model type. If the server URL differs, modify <code>unified_reward_url</code> in <code>scripts/evaluate/eval_reward.sh</code>.</p>
+</blockquote>
+<h3 id="3-vh-evaluator-environment-vheval">3. VH Evaluator Environment (<code>VH_Eval</code>)</h3>
+<p>The Visual Hallucinations Evaluator requires a <strong>different vLLM version</strong>. Create a third conda environment:</p>
+<pre class="hljs"><code><div>conda create -n VH_Eval python=3.12
+conda activate VH_Eval
+pip install vllm==0.9.0.1 transformers==4.52.4
+</div></code></pre>
+<hr>
+<h2 id="%F0%9F%9A%80-training">🚀 Training</h2>
+<h3 id="consistentrft-grpo-fine-tuning-8-gpus">ConsistentRFT GRPO Fine-tuning (8 GPUs)</h3>
+<pre class="hljs"><code><div>bash scripts/finetune/FLUX_GRPO.sh
+</div></code></pre>
+<h3 id="online-dpo-fine-tuning-8-gpus">Online DPO Fine-tuning (8 GPUs)</h3>
+<pre class="hljs"><code><div>bash scripts/finetune/FLUX_DPO.sh
+</div></code></pre>
+<hr>
+<h2 id="%F0%9F%8E%A8-inference">🎨 Inference</h2>
+<p>We provide inference scripts for both <strong>LoRA fine-tuned</strong> and <strong>full fine-tuned</strong> Flux models.</p>
+<h3 id="1-lora-fine-tuned-models">1. LoRA Fine-tuned Models</h3>
+<pre class="hljs"><code><div>bash scripts/inference/multi_inference_flux_lora.sh &lt;checkpoint_base_dir&gt; &lt;gpu_ids&gt; &lt;num_gpus&gt;
+</div></code></pre>
+<p><strong>Example:</strong></p>
+<pre class="hljs"><code><div>bash scripts/inference/multi_inference_flux_lora.sh ./data/outputs/grpo_consist_mix_lora 0,1,2,3 4
+</div></code></pre>
+<h3 id="2-full-fine-tuned-models">2. Full Fine-tuned Models</h3>
+<pre class="hljs"><code><div>bash scripts/inference/multi_inference_flux.sh &lt;checkpoint_base_dir&gt; &lt;gpu_ids&gt; &lt;num_gpus&gt;
+</div></code></pre>
+<p><strong>Example:</strong></p>
+<pre class="hljs"><code><div>bash scripts/inference/multi_inference_flux.sh ./data/outputs/consistentrft_full 0,1,2,3 4
+</div></code></pre>
+<h3 id="3-arguments">3. Arguments</h3>
+<table>
+<thead>
+<tr>
+<th>Argument</th>
+<th>Description</th>
+<th>Example</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>checkpoint_base_dir</code></td>
+<td>Base directory containing multiple <code>*checkpoint-*</code> subdirectories</td>
+<td><code>./data/outputs/grpo_consist_mix_lora</code></td>
+</tr>
+<tr>
+<td><code>gpu_ids</code></td>
+<td>CUDA visible devices</td>
+<td><code>0,1,2,3</code></td>
+</tr>
+<tr>
+<td><code>num_gpus</code></td>
+<td>Number of GPUs per node</td>
+<td><code>4</code></td>
+</tr>
+</tbody>
+</table>
+<blockquote>
+<p><strong>Note:</strong> The script automatically discovers all <code>*checkpoint-*</code> subdirectories under <code>checkpoint_base_dir</code> and runs inference for each.</p>
+</blockquote>
+<hr>
+<h2 id="%F0%9F%93%8A-evaluation">📊 Evaluation</h2>
+<h3 id="1-reward-model-evaluation">1. Reward Model Evaluation</h3>
+<p>Evaluate generated images using multiple reward models (HPS-v2.1, CLIP Score, ImageReward, PickScore, etc.):</p>
+<pre class="hljs"><code><div>bash scripts/evaluate/eval_reward.sh &lt;checkpoint_dir&gt; &lt;gpu_ids&gt; &lt;num_gpus&gt;
+</div></code></pre>
+<p><strong>Example:</strong></p>
+<pre class="hljs"><code><div>bash scripts/evaluate/eval_reward.sh ./outputs/checkpoint-100 0,1,2,3 4
+</div></code></pre>
+<table>
+<thead>
+<tr>
+<th>Argument</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>checkpoint_dir</code></td>
+<td>Directory containing the checkpoint with generated samples</td>
+</tr>
+<tr>
+<td><code>gpu_ids</code></td>
+<td>CUDA visible devices</td>
+</tr>
+<tr>
+<td><code>num_gpus</code></td>
+<td>Number of GPUs per node</td>
+</tr>
+</tbody>
+</table>
+<blockquote>
+<p><strong>Note:</strong> Modify <code>reward_model_type</code> in the script to select specific reward models (<code>&quot;hpsv2&quot;</code>, <code>&quot;clip_score&quot;</code>, <code>&quot;image_reward&quot;</code>, <code>&quot;pick_score&quot;</code>, <code>&quot;unified_reward&quot;</code>, or <code>&quot;all&quot;</code>).</p>
+</blockquote>
+<h3 id="2-high-level-visual-hallucinations-evaluator">2. High-Level Visual Hallucinations Evaluator</h3>
+<p>This evaluator uses a Vision-Language Model (VLM) to detect over-optimization hallucinations in generated images, including <strong>grid pattern artifacts</strong> and <strong>texture over-enhancement</strong>.</p>
+<p>We provide two versions:</p>
+<ul>
+<li><strong>VH_Evaluator</strong>: Standard evaluation using original images</li>
+<li><strong>VH_Evaluator_v2</strong>: Enhanced evaluation with image preprocessing for improved grid pattern detection</li>
+</ul>
+<h4 id="21-prerequisites">2.1 Prerequisites</h4>
+<ul>
+<li>Download <a href="https://huggingface.co/Qwen/Qwen2.5-VL-72B-Instruct">Qwen2.5-VL-72B-Instruct</a> to <code>./pretrained_ckpt/Qwen2.5-VL-72B-Instruct</code></li>
+</ul>
+<h4 id="22-start-server">2.2 Start Server</h4>
+<p>Launch the VLM server (default: 8 GPUs, port 8000):</p>
+<pre class="hljs"><code><div><span class="hljs-built_in">cd</span> ./VH_Evaluator
+bash start_server.sh [NUM_GPUS] [PORT]
+</div></code></pre>
+<p><strong>Examples:</strong></p>
+<pre class="hljs"><code><div>bash start_server.sh          <span class="hljs-comment"># 8 GPUs, port 8000</span>
+bash start_server.sh 4        <span class="hljs-comment"># 4 GPUs, port 8000</span>
+bash start_server.sh 4 8001   <span class="hljs-comment"># 4 GPUs, port 8001</span>
+</div></code></pre>
+<h4 id="23-standard-evaluation-vhevaluator">2.3 Standard Evaluation (VH_Evaluator)</h4>
+<p>Run the evaluation client to analyze images in a folder:</p>
+<pre class="hljs"><code><div><span class="hljs-built_in">cd</span> ./VH_Evaluator
+bash eval.sh &lt;image_folder&gt; &lt;output_json_path&gt;
+</div></code></pre>
+<p><strong>Example:</strong></p>
+<pre class="hljs"><code><div>bash eval.sh ./outputs/checkpoint-100/samples High_Level_eval/checkpoint-100.json
+</div></code></pre>
+<h4 id="24-enhanced-grid-detection-vhevaluatorv2">2.4 Enhanced Grid Detection (VH_Evaluator_v2)</h4>
+<blockquote>
+<p><strong>🚧 TODO:</strong> This section is still being organized. Details coming soon.</p>
+</blockquote>
+<pre class="hljs"><code><div><span class="hljs-built_in">cd</span> ./VH_Evaluator_v2
+bash eval.sh &lt;image_folder&gt; &lt;output_json_path&gt;
+</div></code></pre>
+<p><strong>Example:</strong></p>
+<pre class="hljs"><code><div>bash eval.sh ./outputs/checkpoint-100/samples High_Level_eval/checkpoint-100_v2.json
+</div></code></pre>
+<blockquote>
+<p><strong>Note:</strong> VH_Evaluator_v2 uses more API tokens due to multiple preprocessed images per evaluation. Use it when grid pattern detection accuracy is critical.</p>
+</blockquote>
+<table>
+<thead>
+<tr>
+<th>Argument</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>image_folder</code></td>
+<td>Path to the folder containing generated images</td>
+</tr>
+<tr>
+<td><code>output_json_path</code></td>
+<td>Path to save the evaluation results (JSONL format)</td>
+</tr>
+</tbody>
+</table>
+<h4 id="output-format">Output Format</h4>
+<p>The output is a JSONL file (one JSON object per line). Each line contains the evaluation result for a single image:</p>
+<pre class="hljs"><code><div>{
+  <span class="hljs-attr">"image_name"</span>: <span class="hljs-string">"10.jpg"</span>,
+  <span class="hljs-attr">"image_path"</span>: <span class="hljs-string">"/path/to/sample_folder/10.jpg"</span>,
+  <span class="hljs-attr">"evaluation"</span>: {
+    <span class="hljs-attr">"image"</span>: {
+      <span class="hljs-attr">"has_over_optimization"</span>: <span class="hljs-literal">false</span>,
+      <span class="hljs-attr">"over_optimization_level"</span>: <span class="hljs-number">1</span>,
+      <span class="hljs-attr">"detail_sharpness_score"</span>: <span class="hljs-number">1</span>,
+      <span class="hljs-attr">"irrelevant_details_score"</span>: <span class="hljs-number">0</span>,
+      <span class="hljs-attr">"grid_pattern_score"</span>: <span class="hljs-number">0</span>,
+      <span class="hljs-attr">"overall_hallucination_score"</span>: <span class="hljs-number">0.67</span>,
+      <span class="hljs-attr">"confidence"</span>: <span class="hljs-number">0.9</span>,
+      <span class="hljs-attr">"detailed_analysis"</span>: <span class="hljs-string">"The image appears to have minimal over-optimization..."</span>
+    }
+  },
+  <span class="hljs-attr">"attempt"</span>: <span class="hljs-number">1</span>,
+  <span class="hljs-attr">"success"</span>: <span class="hljs-literal">true</span>,
+  <span class="hljs-attr">"timestamp"</span>: <span class="hljs-string">"2026-03-05T01:43:17.815411"</span>
+}
+</div></code></pre>
+<table>
+<thead>
+<tr>
+<th>Field</th>
+<th>Type</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>has_over_optimization</code></td>
+<td>bool</td>
+<td>Whether over-optimization hallucination is detected</td>
+</tr>
+<tr>
+<td><code>over_optimization_level</code></td>
+<td>int (0-5)</td>
+<td>Overall severity of over-optimization</td>
+</tr>
+<tr>
+<td><code>detail_sharpness_score</code></td>
+<td>int (0-5)</td>
+<td>Degree of unnaturally sharp edges / over-refined textures</td>
+</tr>
+<tr>
+<td><code>irrelevant_details_score</code></td>
+<td>int (0-5)</td>
+<td>Degree of irrelevant / excessive decorative details</td>
+</tr>
+<tr>
+<td><code>grid_pattern_score</code></td>
+<td>int (0-5)</td>
+<td>Degree of grid pattern artifacts</td>
+</tr>
+<tr>
+<td><code>overall_hallucination_score</code></td>
+<td>float (0-5)</td>
+<td>Weighted overall hallucination score</td>
+</tr>
+<tr>
+<td><code>confidence</code></td>
+<td>float (0-1)</td>
+<td>Model's confidence in the assessment</td>
+</tr>
+<tr>
+<td><code>detailed_analysis</code></td>
+<td>string</td>
+<td>Free-text explanation of the evaluation</td>
+</tr>
+</tbody>
+</table>
+<h3 id="3-low-level-visual-hallucinations-evaluator">3. Low-Level Visual Hallucinations Evaluator</h3>
+<p>This evaluator computes image quality metrics to detect low-level visual artifacts, including <strong>sharpness</strong>, <strong>high-frequency energy</strong>, <strong>edge artifacts</strong>, and <strong>noise level</strong>.</p>
+<h4 id="31-evaluation">3.1 Evaluation</h4>
+<pre class="hljs"><code><div>python VH_Evaluator/low_level_metric.py &lt;input_dir&gt; &lt;output_dir&gt; [--verbose]
+</div></code></pre>
+<p><strong>Example:</strong></p>
+<pre class="hljs"><code><div>python VH_Evaluator/low_level_metric.py ./outputs/checkpoint-100/samples ./Low_Level_eval --verbose
+</div></code></pre>
+<table>
+<thead>
+<tr>
+<th>Argument</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>input_dir</code></td>
+<td>Path to the folder containing generated images</td>
+</tr>
+<tr>
+<td><code>output_dir</code></td>
+<td>Directory to save the evaluation results (JSON format)</td>
+</tr>
+<tr>
+<td><code>--verbose</code></td>
+<td>(Optional) Show detailed per-image analysis information</td>
+</tr>
+</tbody>
+</table>
+<hr>
+<h2 id="%F0%9F%99%8F-acknowledgement">🙏 Acknowledgement</h2>
+<p>This work is built on many amazing research works and open-source projects. Thanks to all the authors for sharing!</p>
+<ul>
+<li><a href="https://github.com/XueZeyue/DanceGRPO">DanceGRPO</a></li>
+<li><a href="https://github.com/yifan123/flow_grpo">Flow-GRPO</a></li>
+<li><a href="https://github.com/Tencent-Hunyuan/MixGRPO">MixGRPO</a></li>
+<li><a href="https://github.com/jannerm/ddpo">DDPO</a></li>
+<li><a href="https://github.com/CodeGoat24/Pref-GRPO">Pref-GRPO</a></li>
+</ul>
+<hr>
+<h2 id="%F0%9F%93%9D-citation">📝 Citation</h2>
+<p>If you find this repository helpful in your research, please consider citing the paper and starring the repo.</p>
+<pre class="hljs"><code><div>@article{tan2026consistentrft,
+  title={ConsistentRFT: Reducing Visual Hallucinations in Flow-based Reinforcement Fine-Tuning},
+  author={Tan, Xiaofeng and Liu, Jun and Fan, Yuanting and Gao, Bin-Bin and Jiang, Xi and Chen, Xiaochen and Peng, Jinlong and Wang, Chengjie and Wang, Hongsong and Zheng, Feng},
+  journal={arXiv preprint arXiv:2602.03425},
+  year={2026}
+}
+</div></code></pre>
+
+</body>
+
+</html>
