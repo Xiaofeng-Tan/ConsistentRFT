@@ -1,4 +1,4 @@
-<h1 align="center">ConsistentRFT: Reducing Visual Hallucinations in<br>Flow-based Reinforcement Fine-Tuning</h1>
+<h1 align="center">Dual-Grained Policy Optimization for Hallucination Reduction in Flow-based RL</h1>
 
 <p align="center">
   <strong>Under Review</strong>
